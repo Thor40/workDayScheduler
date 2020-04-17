@@ -6,19 +6,6 @@ var date = function(){
 };
 date()
 
-// $("task-text").on("click", function(event) {
-//     var toDoTask = $("#task-text")
-//         .val()
-//         .trim();
-
-//     tasks.push(toDoTask);
-
-//     localStorage.setItem(toDoTask, JSON.stringify(value));
-// })
-
-// var tasks = JSON.parse(localStorage.getItem("tasklist")) || [];
-// var tasksEl = JSON.parse(localStorage.getItem(id, value))
-
 $('button').on("click", function() {
     $('input').each(function() {
         var id = $(this).attr('id');
