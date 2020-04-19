@@ -29,9 +29,8 @@ var load = function() {
 
 load();
 
-    $("div[id=hour-item] span[id]").each(function() {
+    $("span.hour-item").each(function() {
         var id = $(this).attr('id');
-        // hourTimesArr.push(this.id);
         var timeCheck = moment(JSON.stringify(id), "HH:mm a");
         timeBetween = currentTime.isAfter(timeCheck)
             if(timeBetween) {
