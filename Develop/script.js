@@ -1,4 +1,6 @@
-var tasks = {};
+var i = 1;
+var currentTime = moment();
+var hourTimesArr = [];
 
 var date = function(){
     const now = moment().format('dddd, MMMM Do YYYY')
@@ -26,10 +28,43 @@ var load = function() {
 };
 
 load();
-var timeHandler = function(taskEl) {
-    var hour = $(taskEl).find("span").text().trim();
-    console.log(hour);
-}
+
+    $("div[id=hour-item] span[id]").each(function() {
+        var id = $(this).attr('id');
+        // hourTimesArr.push(this.id);
+        var timeCheck = moment(JSON.stringify(id), "HH:mm a");
+        timeBetween = currentTime.isAfter(timeCheck)
+            if(timeBetween) {
+                $("div[id=task-text-div]").each(function() {
+                $(this).addClass(' bg-secondary');
+            })
+            } else if(!timeBetween) {
+                $("div[id=task-text-div]").each(function() {
+                $(this).addClass(' bg-danger');
+            })
+            } else {
+                $("div[id=task-text-div]").each(function() {
+                    $(this).addClass(' bg-primary');
+                })
+            };
+    });
+// $('span[id^="hour_"]', '#hour-item').each(function(index) {
+//     var hourEl = (this.id);
+//     $('#' + hourEl).html(i + '. ');
+
+//     i++;
+//     console.log(hourEl);
+//     });
+
+
+
+// var timeHandler = function() {
+//     var hour = $(taskEl).find("span").text().trim();
+//     console.log(hour);
+// }
+
+
+
 // var hour = $("span").text();
 // console.log(hour)
 
